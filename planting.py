@@ -1,6 +1,10 @@
 
 # HELPER PLANTER FUNCS
 
+# GLOBALS: 
+X, Y = get_pos_x(), get_pos_y()
+
+
 def grow(p): 
 	# :param p: list of crop entities 
 	# for 4 columns of the array, plant carrots; otherwise, plant bushes & trees
@@ -40,42 +44,36 @@ def pookin(p):
 
 
 # power harvester: 
-def petals():
-	# :param n: max num of petals out of all planted sunflowers 
-	# return: coordinates of current sunflower w/ greatest amount of petals 
-	n = 0 	
-	if get_entity_type() == Entities.Sunflower:
-		if measure() > n: 
-			n = measure() 
-			move(North)
-	return n 
+def petals() -> list:
+	# return: list of tuples containing a sunflower's number of petals and its position on the grid; 
+	# sorted in ascending order based on the former 
+	sun_max = []
+	for i in range(get_world_size):
+		sun_max.append((Y, measure()))
+		move(North)
+	return sun_max.sort(key=lambda x: x[1], reverse=True)
 	
-def sunflwr(p, n): 
-	# :param p: list of crop entities 
-	# :param x: x-coor of drone
-	# :param y: y-coor of drone 
-	# for two columns of farm land, plants sunflowers and harvests the sunflower w/ 
-	# highest num of petals
-	if get_pos_x() == 0 or get_pos_x() == 7:
+def sunflwr(p: dict) -> None: 
+	# :param p: dict of crop entities 
+	# for one column of farm land, plants sunflowers and harvests the current sunflower w/ 
+	# highest num of petals until there are 10 left
+	for i in range(get_world_size()):
 		if get_ground_type() != Grounds.Soil:
 			till()
-		if get_entity_type() != Entities.Sunflower:
-			plant(p[4])
-		elif can_harvest():
-			harvest() 
-			till()
-			plant(p[4])
+			plant(p['sunflwr'])
+			move(North)
 		else:
-			pass
+			move(North)
+	pt_sz = petals()
+	while len(pt_sz) > 10:
+		for tile in range(pt_sz[0][0]):
+			move(North)
+		harvest()
+		for tile in range(pt_sz[0][0]):
+			move(South)
+		pt_sz.pop()
 
-	# x, y = get_pos_x(), get_pos_y()
-	# sun_coors = {}
-	# if x == 0:
-	# 	sun_coors[(x,y)] = measure()
-	# if len(sun_coors) == get_world_size():	
-	# 	max_p = list(sun_coors.items).sort(key=lambda x: x[1], reverse=True) 
-			
-		
+
 	
 		
 		
