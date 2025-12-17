@@ -18,6 +18,7 @@ change_hat(Hats.Tree_Hat)
 while True:
 	# for each tile in every array:
 	for i in range(get_world_size()):
+		pre_sun(P)
 		sunflwr(P)
 		move(East)
 
