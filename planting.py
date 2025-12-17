@@ -48,8 +48,13 @@ def pookin(p):
 			plant(p[3])
 
 
-# power harvester: 
-def pre_sun(p):
+# Basic power harvester: 
+def pre_sun(p: dict) -> None:
+	'''
+	Pre-plants sunflowers across all available farmland before harvesting 
+	
+	:param p: dict of crop entities 
+	'''
 	for i in range(get_world_size()):
 		till()
 		plant(p['sunflwr'])
@@ -57,9 +62,12 @@ def pre_sun(p):
 		move(North)
 
 def sunflwr(p: dict) -> None: 
-	# :param p: dict of crop entities 
-	# for one column of farm land, plants sunflowers and harvests the current sunflower w/ 
-	# highest num of petals until there are 10 left
+	'''
+	Harvests and re-plants sunflowers 
+	
+	:param p: dict of crop entities 
+	:type p: dict
+	'''
 	for i in range(get_world_size()):
 		harvest()
 		till()
