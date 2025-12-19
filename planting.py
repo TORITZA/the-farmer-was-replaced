@@ -75,6 +75,22 @@ def sunflwr(p: dict) -> None:
 		use_item(Items.Water)
 		move(North)
 
+def weird_sub(p: dict) -> None:
+	'''
+	Harvests hay, power, and weird substance & re-plants sunflowers
+	
+	:param p: dict of crop entities 
+	:type p: dict
+	'''
+	for i in range(get_world_size()):
+		if can_harvest():
+			harvest()
+		elif get_ground_type() != Grounds.Soil:
+			till()
+		plant(p['sunflwr'])
+		use_item(Items.Fertilizer)
+		move(North)
+
 
 
 	
