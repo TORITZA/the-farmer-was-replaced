@@ -12,6 +12,12 @@ def search_key(d, target):
 			return key
 	return None
 
+# move through row:
+def traverse_row():
+	for i in range(get_world_size()):
+		move(North)
+
+
 def grow(p): 
 	# :param p: list of crop entities 
 	# for 4 columns of the array, plant carrots; otherwise, plant bushes & trees

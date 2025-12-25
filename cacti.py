@@ -11,18 +11,21 @@ def plant_cacti(p: dict) -> None:
     
     :param p: dict of crop entities 
     '''
-    for i in (get_world_size()):
-        plant(p['cacti'])
+    for i in range(get_world_size()):
+        if get_ground_type() == Grounds.Grassland:
+            till()
+        plant(p['cactus'])
         move(North)
     move(East)
     
 def sort_cacti(p: dict) -> None: 
     '''
-    Reconfigures the arrangement of the cacti to be in sorted order  
+    Reconfigures the arrangement of the cacti to be in sorted order
+    (Bubble sort)  
     
     :param p: dict of crop entities
     '''
-    for i in (get_world_size()):
+    for i in range(get_world_size()):
         if can_move(East) and measure() < measure(East):
             swap(East)
         if can_move(North) and measure() > measure(North):
@@ -36,7 +39,7 @@ def harvest_cacti(p: dict) -> None:
     
     :param p: dict of crop entities 
     '''
-    for i in (get_world_size()):
+    for i in range(get_world_size()):
         harvest()
         move(North)
     move(East)
