@@ -1,5 +1,5 @@
 '''
-Module to maximzie cacti harvesting
+Module to maximize cacti harvest
 '''
 
 # GLOBALS: 

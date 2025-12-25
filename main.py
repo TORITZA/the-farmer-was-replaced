@@ -8,9 +8,9 @@ P = {
 	'tree': Entities.Tree, 
 	'carrot': Entities.Carrot, 
 	'pumpkin': Entities.Pumpkin, 
-	'sunflwr': Entities.Sunflower
+	'sunflwr': Entities.Sunflower,
+	'cactus': Entities.Cactus
 	}
-# change list to dict cuz indexes addle the human (MY) brain
 
 clear()
 change_hat(Hats.Tree_Hat)

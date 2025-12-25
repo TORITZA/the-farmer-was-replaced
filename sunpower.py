@@ -1,4 +1,7 @@
-# defunt; TFWR does not support key= argument/lambda sorting 
+'''
+Experimentation with different sunflower-harvesting/-planting methodologies  
+'''
+# defunct; TFWR does not support key= argument/lambda sorting 
 from planting import *
 
 

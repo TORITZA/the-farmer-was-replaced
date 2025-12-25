@@ -1,5 +1,7 @@
-
-# HELPER PLANTER FUNCS
+'''
+Module containing functions that plant & harvest an 
+assortment of the game's crops
+'''
 
 # GLOBALS: 
 X, Y = get_pos_x(), get_pos_y()
