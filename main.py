@@ -1,4 +1,5 @@
 from planting import * 
+from pumpkin import pumpkin_cleric, pumpkin_planter
 
 
 # GLOBALS: 
