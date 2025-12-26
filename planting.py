@@ -55,6 +55,23 @@ def pookin(p):
 		if get_ground_type() == Grounds.Soil or get_entity_type() == Entities.Dead_Pumpkin:
 			plant(p[3])
 
+def pumpkin_planter(p):
+	for i in range(get_world_size()):
+		if get_ground_type() == Grounds.Grassland:
+			till()
+		plant(p['pumpkin'])
+		move(North)
+
+def pumpkin_cleric(p):
+	for i in range(get_world_size()):
+		move(North)
+		if get_entity_type() == Entities.Dead_Pumpkin:
+			plant(p['pumpkin'])
+			use_item(Items.Water)
+			pumpkin_cleric(p)
+		if can_harvest() is False:
+			pumpkin_cleric()
+
 
 # Basic power harvester: 
 def pre_sun(p: dict) -> None:
