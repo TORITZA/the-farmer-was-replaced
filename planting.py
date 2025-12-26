@@ -40,21 +40,6 @@ def grow(p):
 		else: 
 			plant(p[0])
 
-
-def pookin(p):
-	# :param p: list of crop entities 
-	# plant pumpkins for 6 of the farm's rightmost columns 
-	
-	if can_harvest():
-		harvest() 
-		till()
-		plant(p[3])
-			#use_item(Items.Water)
-	if get_pos_x() > 9:
-		till()
-		if get_ground_type() == Grounds.Soil or get_entity_type() == Entities.Dead_Pumpkin:
-			plant(p[3])
-
 def pumpkin_planter(p):
 	for i in range(get_world_size()):
 		if get_ground_type() == Grounds.Grassland:
@@ -63,15 +48,20 @@ def pumpkin_planter(p):
 		move(North)
 
 def pumpkin_cleric(p):
-	for i in range(get_world_size()):
+	sz = list(range(get_world_size()))
+	checked = set()
+	i = 0
+	while len(checked) < get_world_size():
 		move(North)
+		if i == get_world_size:
+			i = 0
+		else:
+			i += 1
 		if get_entity_type() == Entities.Dead_Pumpkin:
 			plant(p['pumpkin'])
 			use_item(Items.Water)
-			pumpkin_cleric(p)
-		if can_harvest() is False:
-			pumpkin_cleric()
-
+		elif can_harvest() and get_entity_type() != Entities.Dead_Pumpkin:
+			checked.add(sz[i])
 
 # Basic power harvester: 
 def pre_sun(p: dict) -> None:
