@@ -81,22 +81,6 @@ def weird_sub(p: dict) -> None:
 			till()
 		plant(p['sunflwr'])
 
-def tree_planter(p):
-	for i in range(get_world_size()):
-		if get_pos_x() % 2 == 0 and get_pos_y() % 2 == 0 or get_pos_x() % 2 != 0 and get_pos_y() % 2 != 0:
-			if get_ground_type() == Grounds.Grassland:
-				till()
-			plant(p['tree'])
-			use_item(Items.Water)
-		move(North)
-
-def poly_tree(p):
-	for i in range(get_world_size()):
-		if get_entity_type() == p['tree']:
-			while get_companion() != Entities.Grass:
-				plant(p['tree'])
-		move(North)
-
 
 
 
