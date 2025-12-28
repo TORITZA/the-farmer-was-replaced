@@ -3,6 +3,8 @@ Module containing functions that plant & harvest an
 assortment of the game's crops
 '''
 
+# To-do: 1) finalize/optimize [refactor] code, 2) docstring, 3) type hints 4) curb module bloating
+
 # GLOBALS: 
 X, Y = get_pos_x(), get_pos_y()
 
