@@ -1,0 +1,4 @@
+'''
+Carrot harvester utilizing polyculture 
+'''
+
