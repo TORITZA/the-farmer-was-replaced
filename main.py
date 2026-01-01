@@ -29,6 +29,12 @@ while True:
 	# 	move(East)
 	# harvest()
 
+# FOR DINO FARM:
+# set_world_size(10)
+# change_hat(Hats.Dinosaur_Hat)
+# while True:
+# 	snake()
+		
 
  
 	
