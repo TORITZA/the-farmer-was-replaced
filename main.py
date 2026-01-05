@@ -1,5 +1,6 @@
 from planting import * 
 from pumpkin import pumpkin_cleric, pumpkin_planter
+from cacti import v_drone_sort_cacti, h_drone_sort_cacti, plant_cacti
 
 
 # GLOBALS: 
@@ -18,6 +19,8 @@ change_hat(Hats.Tree_Hat)
 
 while True:
 	# for each tile in every array:
+    for i in range(get_world_size()):
+        spawn_drone(v_drone_sort_cacti())
 	
 	
 	# --------- Pumpkin harvester:
@@ -34,6 +37,15 @@ while True:
 # change_hat(Hats.Dinosaur_Hat)
 # while True:
 # 	snake()
+
+# FOR CACTI FARM: 
+	# while True:
+	# 	for i in range(get_world_size()):
+	# 		v_sort_cacti(P)
+	# 	for i in range(get_world_size()):
+	# 		h_sort_cacti(P)
+	# 	harvest()
+
 		
 
  
