@@ -4,6 +4,8 @@ Module to maximize cacti harvest
 
 p = Entities.Cactus
 
+# ---- Single drone:
+
 def plant_cacti(p):
 	for i in range(get_world_size()):
 		if get_ground_type() == Grounds.Grassland:	

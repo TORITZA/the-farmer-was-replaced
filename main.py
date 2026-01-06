@@ -19,8 +19,17 @@ change_hat(Hats.Tree_Hat)
 
 while True:
 	# for each tile in every array:
-    for i in range(get_world_size()):
-        spawn_drone(v_drone_sort_cacti())
+	# CACTI MEGAFARM PROGRAM: 
+	for i in range(get_world_size()-1):
+		spawn_drone(v_drone_sort_cacti)
+		move(North)
+	v_drone_sort_cacti()
+	for i in range(get_world_size() - 1):
+		spawn_drone(h_drone_sort_cacti)
+		move(East)
+	h_drone_sort_cacti()
+	harvest()
+	clear()
 	
 	
 	# --------- Pumpkin harvester:
