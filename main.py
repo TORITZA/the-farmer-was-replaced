@@ -31,6 +31,12 @@ while True:
 	harvest()
 	clear()
 	
+	# --- Lousy MegaFarm 1x1 Maze Harvester:
+	# while True:
+	# for i in range(get_world_size()):
+	# 	move(North)
+	# 	spawn_drone(drone_treasure_hunter)
+	# move(East)
 	
 	# --------- Pumpkin harvester:
 	# for i in range(get_world_size()):
