@@ -30,6 +30,26 @@ while True:
 	h_drone_sort_cacti()
 	harvest()
 	clear()
+
+	# Debug attempt for MegaFarm cacti.py harvester:
+	# deployed_drones = []
+#	for i in range(get_world_size()-1):
+#		v_drone = spawn_drone(v_sort_cacti)
+#		deployed_drones.append(v_drone)
+#		move(North)
+#	v_sort_cacti()
+#	for drone in deployed_drones:
+#		while has_finished(drone) != True:
+#			wait_for(drone)
+#	move(North)
+#	deployed_drones = []
+#	for i in range(get_world_size() - 1):
+#		h_drone = spawn_drone(h_sort_cacti)
+#		deployed_drones.append(h_drone)
+#		move(East)
+#	h_sort_cacti()
+#	harvest()
+#	clear()
 	
 	# --- Lousy MegaFarm 1x1 Maze Harvester:
 	# while True:
