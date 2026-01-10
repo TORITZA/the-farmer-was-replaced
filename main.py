@@ -31,9 +31,24 @@ while True:
 	harvest()
 	clear()
 
-# MegaFarm Pumpkin harvester:
-	for i in range(get_world_size()):
-		
+# MegaFarm Pumpkin harvester: (WIP - TIMED PUMPKIN ACHIEVEMENT)
+	# change_hat(Hats.Pumpkin_Hat)
+	# while True:
+	# 	for i in range(get_world_size()):
+	# 		spawn_drone(pumpkin_planter)
+	# 		move(East)
+	# 	move(West)
+	# 	pumpkin_planter()
+	# 	move(East)
+	# 	for i in range(get_world_size()):
+	# 		spawn_drone(pumpkin_cleric)
+	# 		move(East)
+	# 	move(West)
+	# 	while num_drones() > 1:
+	# 		pumpkin_cleric()
+	# 	harvest()
+	# 	clear()
+
 
 
 	# Debug attempt for MegaFarm cacti.py harvester:
