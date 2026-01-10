@@ -31,6 +31,11 @@ while True:
 	harvest()
 	clear()
 
+# MegaFarm Pumpkin harvester:
+	for i in range(get_world_size()):
+		
+
+
 	# Debug attempt for MegaFarm cacti.py harvester:
 	# deployed_drones = []
 #	for i in range(get_world_size()-1):
