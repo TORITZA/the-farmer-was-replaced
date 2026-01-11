@@ -1,6 +1,7 @@
 from planting import * 
 from pumpkin import pumpkin_cleric, pumpkin_planter
 from cacti import v_drone_sort_cacti, h_drone_sort_cacti, plant_cacti
+from carrots import poly_carrot
 
 
 # GLOBALS: 
@@ -19,19 +20,27 @@ change_hat(Hats.Tree_Hat)
 
 while True:
 	# for each tile in every array:
-	# CACTI MEGAFARM PROGRAM: 
-	for i in range(get_world_size()-1):
-		spawn_drone(v_drone_sort_cacti)
+	for i in range(get_world_size()):
 		move(North)
-	v_drone_sort_cacti()
-	for i in range(get_world_size() - 1):
-		spawn_drone(h_drone_sort_cacti)
-		move(East)
-	h_drone_sort_cacti()
-	harvest()
-	clear()
+		spawn_drone(poly_carrot)
+	poly_carrot()
+	
 
-# MegaFarm Pumpkin harvester: (WIP - TIMED PUMPKIN ACHIEVEMENT)
+
+
+	# -- CACTI MEGAFARM PROGRAM: 
+	# for i in range(get_world_size()-1):
+	# 	spawn_drone(v_drone_sort_cacti)
+	# 	move(North)
+	# v_drone_sort_cacti()
+	# for i in range(get_world_size() - 1):
+	# 	spawn_drone(h_drone_sort_cacti)
+	# 	move(East)
+	# h_drone_sort_cacti()
+	# harvest()
+	# clear()
+
+# --- MegaFarm Pumpkin harvester: (WIP - TIMED PUMPKIN ACHIEVEMENT)
 	# change_hat(Hats.Pumpkin_Hat)
 	# while True:
 	# 	for i in range(get_world_size()):
