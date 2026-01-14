@@ -44,3 +44,11 @@ def mega_tree():
 			plant(Entities.Grass)
 
 
+# WOOD MEGAFARMER:
+"""
+for i in range(get_world_size()):
+	move(East)
+	spawn_drone(mega_tree)
+mega_tree()
+
+"""
